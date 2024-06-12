@@ -18,3 +18,10 @@ test('get started link', async ({ page }) => {
 	// Expects page to have a heading with the name of Installation.
 	await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
+test('test', async ({ page }) => {
+	await page.goto('https://www.zonajobs.com.ar/');
+	await page.getByText('Puesto, empresa o palabra').click();
+	await page.locator('#react-select-2-input').fill('testing');
+	await page.getByText('Buscar Trabajo').click();
+});
