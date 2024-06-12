@@ -26,7 +26,7 @@ test('testing search button', async ({ page }) => {
 	await page.getByText('Buscar Trabajo').click();
 });
 
-test('testing the search using the keyboard', async ({ page }) => {
+test('testing the search by keyboard', async ({ page }) => {
 	await page.goto('https://www.zonajobs.com.ar/');
 	await page.getByText('Puesto, empresa o palabra').click();
 	await page.locator('#react-select-2-input').fill('testing');
