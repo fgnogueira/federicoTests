@@ -19,9 +19,16 @@ test('get started link', async ({ page }) => {
 	await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
 
-test('test', async ({ page }) => {
+test('testing search button', async ({ page }) => {
 	await page.goto('https://www.zonajobs.com.ar/');
 	await page.getByText('Puesto, empresa o palabra').click();
 	await page.locator('#react-select-2-input').fill('testing');
 	await page.getByText('Buscar Trabajo').click();
+});
+
+test('testing the search using the keyboard', async ({ page }) => {
+	await page.goto('https://www.zonajobs.com.ar/');
+	await page.getByText('Puesto, empresa o palabra').click();
+	await page.locator('#react-select-2-input').fill('testing');
+	await page.keyboard.press('Enter');
 });
