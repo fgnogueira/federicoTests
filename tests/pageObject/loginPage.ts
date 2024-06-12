@@ -16,12 +16,12 @@ constructor(page:Page){
 
 
 
-async fillUserName(Username:string){
-   await this.usernameTextBox.fill('qaautostaging@email.ghostinspector.com');
+async fillUserName(username:string){
+   await this.usernameTextBox.fill(username);
 }
 
 async fillPassword(password:string){
-    await this.passwordTextBox.fill('Automation123!');
+    await this.passwordTextBox.fill(password);
 }
 
 async clickOnLogin(){
