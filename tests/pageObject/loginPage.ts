@@ -35,8 +35,3 @@ async loginWithCredentials(username:string, password:string){
 }
 
 }
-
-
-   // await page.getByPlaceholder('Username or Email Address').fill('qaautostaging@email.ghostinspector.com');
-//	await page.getByPlaceholder('Password').fill('Automation123!');
-//	await page.getByRole('button', { name: 'Sign in' }).click();
