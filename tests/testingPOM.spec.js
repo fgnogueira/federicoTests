@@ -10,6 +10,7 @@ test('test 1 - buttons present and clickables', async ({ page }) => {
 	const login = new loginPage(page);
 	await login.loginWithCredentials('qaautostaging@email.ghostinspector.com', 'Automation123!');
 	await login.checkingLinks();
+	//await login.completedOrdersTab.click(); - We can use the locators individually.
 });
 
 test('test 2 - going to settings', async ({ page }) => {
