@@ -9,14 +9,7 @@ test('test 1 - buttons present and clickables', async ({ page }) => {
 	//await page.goto('https://qa-staging-auto.kclient-staging.com/login');
 	const login = new loginPage(page);
 	await login.loginWithCredentials('qaautostaging@email.ghostinspector.com', 'Automation123!');
-	await page.getByRole('tab', { name: 'Completed Orders' }).click();
-	await page.getByRole('tab', { name: 'Cancelled Orders' }).click();
-	await page.getByRole('tab', { name: 'Shared Quotes' }).click();
-	await page.getByRole('tab', { name: 'Bookmarks' }).click();
-	await page.getByRole('link', { name: ' Settings' }).click();
-	await page.getByRole('button', { name: ' Contacts' }).click();
-	await page.getByRole('button', { name: ' Close contacts' }).click();
-	await page.getByRole('button', { name: ' Logout' }).click();
+	await login.checkingLinks();
 });
 
 test('test 2 - going to settings', async ({ page }) => {
