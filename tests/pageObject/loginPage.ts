@@ -13,6 +13,7 @@ private  settingsLink: Locator
 private  contactsButton: Locator
 private  closeContactsButton: Locator
 private  logoutButton: Locator
+private  acceptCookiesButton: Locator
 
 
 constructor(page:Page){
@@ -28,6 +29,8 @@ constructor(page:Page){
     this.contactsButton = page.getByRole('button', { name: ' Contacts' })
     this.closeContactsButton = page.getByRole('button', { name: ' Close contacts' })
     this.logoutButton = page.getByRole('button', { name: ' Logout' })
+    this.acceptCookiesButton = page.locator('xpath=//*[@data-test-action="accept-cookie"]')
+
 }
 
 
