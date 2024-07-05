@@ -39,6 +39,7 @@ constructor(page:Page, keyboard:Keyboard){
 
 async newBookingLink(){
     await this.newBooking.click();
+    
 }
 
 
@@ -64,6 +65,7 @@ async lclButton(){
 
 async fromInputField(from:string){
     await this.fromInput.fill(from);
+    
 }
 
 
