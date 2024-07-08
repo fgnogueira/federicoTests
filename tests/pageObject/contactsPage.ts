@@ -144,4 +144,27 @@ async country3Item(){
    
 }
 
+
+async createNewContact(company:string, username:string, lastname:string, email:string, address1:string, address2:string, city:string, state:string, postcode:string,
+    phoneNumber:any, fax:any, vat:any, customerCode:any ){
+   await this.newContactLink();
+	await this.addContactLink();
+	await this.companyNameField(company);
+	await this.firstNameField(username);
+	await this.lastNameField(lastname);
+	await this.emailField(email);
+	await this.address1Field(address1);
+	await this.address2Field(address2);
+	await this.cityField(city);
+	await this.stateField(state);
+	await this.countryField();
+	await this.postcodeField(postcode);
+	await this.country1Item();
+	await this.telephoneField(phoneNumber);
+	await this.faxField(fax);
+	await this.vatField(vat);
+	await this.customerCodeField(customerCode);
+	await this.saveContactDetailsButton();
+}
+
 }

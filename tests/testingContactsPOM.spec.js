@@ -51,8 +51,34 @@ test('test 2 - create a new contact parameterized', async ({ page }) => {
 	//await page.setViewportSize({ width: 1600, height: 1200 });
 	const login = new loginPage(page);
 	const contacts = new contactsPage(page);
-	const username = faker.person.firstName();
 	const company = faker.company.name();
+	const username = faker.person.firstName();
+	const lastname = faker.person.lastName();
+	const email = faker.internet.email();
+	const address1 = faker.location.street();
+	const address2 = faker.location.streetAddress();
+	const city = faker.location.city();
+	const state = faker.location.state();
+	const postcode = faker.location.zipCode();
+	const phoneNumber = faker.phone.number();
+	const fax = faker.phone.number();
+	const vat = faker.string.numeric(8);
+	const customerCode = faker.string.numeric(8);
 	await login.loginWithCredentials('qaautostaging@email.ghostinspector.com', 'Automation123!');
 	await login.acceptCookiesButton.click();
+	await contacts.createNewContact(
+		company,
+		username,
+		lastname,
+		email,
+		address1,
+		address2,
+		city,
+		state,
+		postcode,
+		phoneNumber,
+		fax,
+		vat,
+		customerCode
+	);
 });
