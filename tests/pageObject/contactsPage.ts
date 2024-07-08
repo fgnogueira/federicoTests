@@ -19,8 +19,9 @@ private  fax: Locator
 private  vat: Locator
 private  customerCode: Locator
 private  saveContactDetails: Locator
-
-
+private  country1: Locator
+private  country2: Locator
+private  country3: Locator
 
 
 
@@ -36,14 +37,16 @@ constructor(page:Page){
     this.address2 = page.locator('xpath=//*[@data-test-input="address2"]')
     this.city = page.locator('xpath=//*[@data-test-input="city-town"]')
     this.state = page.locator('xpath=//*[@data-test-input="region"]')
-    // HERE!!!
-    this.country = page.locator('xpath=//*[@data-test-action="contacts"]')
-    this.postcode = page.locator('xpath=//*[@data-test-action="add-contact"]')
-    this.telephone = page.locator('xpath=//*[@data-test-action="contacts"]')
-    this.fax = page.locator('xpath=//*[@data-test-action="add-contact"]')
-    this.vat = page.locator('xpath=//*[@data-test-action="contacts"]')
-    this.customerCode = page.locator('xpath=//*[@data-test-action="add-contact"]')
-    this.saveContactDetails = page.locator('xpath=//*[@data-test-action="add-contact"]')
+    this.country = page.locator('xpath=//*[@data-test-input="country"]')
+    this.postcode = page.locator('xpath=//*[@data-test-input="post-code"]')
+    this.telephone = page.locator('xpath=//*[@data-test-input="phone"]')
+    this.fax = page.locator('xpath=//*[@data-test-input="fax"]')
+    this.vat = page.locator('xpath=//*[@data-test-input="vat-no"]')
+    this.customerCode = page.locator('xpath=//*[@data-test-input="customer-code"]')
+    this.saveContactDetails = page.locator('xpath=//*[@data-test-action="create-contact"]')
+    this.country1 = page.locator('xpath=//*[@data-option-index="1"]')
+    this.country2 = page.locator('xpath=//*[@data-option-index="2"]')
+    this.country3 = page.locator('xpath=//*[@data-option-index="3"]')
 
 }
 
@@ -93,8 +96,8 @@ async newContactLink(){
     await this.state.fill(state);
     
  }
- async countryField(country:string){
-    await this.country.fill(country);
+ async countryField(){
+    await this.country.click();
     
  }
 
@@ -125,4 +128,20 @@ async newContactLink(){
     await this.saveContactDetails.click();
     
  }
+
+ async country1Item(){
+   await this.country1.click();
+   
+}
+
+async country2Item(){
+   await this.country2.click();
+   
+}
+
+async country3Item(){
+   await this.country3.click();
+   
+}
+
 }
