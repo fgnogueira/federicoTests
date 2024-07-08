@@ -26,7 +26,6 @@ test('test 1 - create a new contact', async ({ page }) => {
 	const customerCode = faker.string.numeric(8);
 
 	await login.loginWithCredentials('qaautostaging@email.ghostinspector.com', 'Automation123!');
-	await login.acceptCookiesButton.click();
 	await contacts.newContactLink();
 	await contacts.addContactLink();
 	await contacts.companyNameField(company);
@@ -65,7 +64,6 @@ test('test 2 - create a new contact parameterized', async ({ page }) => {
 	const vat = faker.string.numeric(8);
 	const customerCode = faker.string.numeric(8);
 	await login.loginWithCredentials('qaautostaging@email.ghostinspector.com', 'Automation123!');
-	await login.acceptCookiesButton.click();
 	await contacts.createNewContact(
 		company,
 		username,

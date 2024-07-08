@@ -51,6 +51,7 @@ async loginWithCredentials(username:string, password:string){
     await this.usernameTextBox.fill(username);
     await this.passwordTextBox.fill(password);
     await this.loginButton.click();
+    await this.acceptCookiesButton.click();
 }
 
 async checkingLinks(){

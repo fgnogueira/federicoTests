@@ -11,7 +11,6 @@ test('test 1 - get a quote', async ({ page }) => {
 	const login = new loginPage(page);
 	const quotes = new quotesPage(page);
 	await login.loginWithCredentials('qaautostaging@email.ghostinspector.com', 'Automation123!');
-	await login.acceptCookiesButton.click();
 	await quotes.newBookingLink();
 	await quotes.exportButton();
 	await quotes.fclButton();
