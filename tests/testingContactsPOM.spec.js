@@ -22,8 +22,8 @@ test('test 1 - create a new contact', async ({ page }) => {
 	const postcode = faker.location.zipCode();
 	const phoneNumber = faker.phone.number();
 	const fax = faker.phone.number();
-	const vat = faker.string.numeric(8);
-	const customerCode = faker.string.numeric(8);
+	const vat = faker.string.numeric(9);
+	const customerCode = faker.string.numeric(9);
 
 	await login.loginWithCredentials('qaautostaging@email.ghostinspector.com', 'Automation123!');
 	await contacts.newContactLink();
