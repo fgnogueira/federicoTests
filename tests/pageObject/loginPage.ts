@@ -14,6 +14,7 @@ private  contactsButton: Locator
 private  closeContactsButton: Locator
 private  logoutButton: Locator
 private  acceptCookiesButton: Locator
+private  errorMessage: Locator
 
 
 constructor(page:Page){
@@ -30,6 +31,7 @@ constructor(page:Page){
     this.closeContactsButton = page.getByRole('button', { name: ' Close contacts' })
     this.logoutButton = page.getByRole('button', { name: ' Logout' })
     this.acceptCookiesButton = page.locator('xpath=//*[@data-test-action="accept-cookie"]')
+    this.errorMessage = page.locator('xpath=//*[@class="alert-box show-alert general-error ember-view"]/p')
 
 }
 

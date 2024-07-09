@@ -21,3 +21,11 @@ test('test 2 - going to settings', async ({ page }) => {
 	await expect(page.locator('body')).toContainText('Settings');
 	await expect(page.locator('body')).toContainText('Account Details');
 });
+
+test('test 3 - login with wrong credentials', async ({ page }) => {
+	const login = new loginPage(page);
+	await login.fillUserName('qasdasd@email.ghostinspector.com');
+	await login.fillPassword('asdasd');
+	await login.clickOnLogin();
+	await expect(login.errorMessage).toContainText('Email and/or password incorrect');
+});
